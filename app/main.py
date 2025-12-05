@@ -2,11 +2,13 @@ from fastapi import FastAPI
 from mangum import Mangum
 import joblib
 import numpy as np
+import os
 
 app = FastAPI()
 
 # loading the saved model
-model = joblib.load("app/model/linear_regression_model.pkl")
+model_path = os.path.join(os.path.dirname(__file__), "model/linear_regression_model.pkl")
+model = joblib.load(model_path)
 
 @app.get("/")
 def home():
@@ -38,4 +40,3 @@ def predict(years_of_experience: float):
         }
     
 # vercel serverless handler
-handler = Mangum(app)
