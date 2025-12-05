@@ -6,7 +6,7 @@ import numpy as np
 app = FastAPI()
 
 # loading the saved model
-model = joblib.load("./model/linear_regression_model.pkl")
+model = joblib.load("app/model/linear_regression_model.pkl")
 
 @app.get("/")
 def home():
