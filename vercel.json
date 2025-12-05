@@ -2,7 +2,8 @@
   "version": 2,
   "functions": {
     "api/predict.py": {
-      "runtime": "python3.11"
+      "runtime": "vercel-python@0.5.1",
+      "maxDuration": 10
     }
   },
   "routes": [
